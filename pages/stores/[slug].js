@@ -24,9 +24,8 @@ export async function getStaticProps(context) {
     // Validar el token (si es valido y tiempo de expiracion)
     // Si el token no es valido o no existe solicitar un nuevo token y almacenarlo en cache
     // Usando el token para pedir los datos de la tienda
-
     
-    const resStoreData = await fetch(`http://localhost:3000/api/storedata/${context.params.storeId}`, {
+    const resStoreData = await fetch(`http://localhost:3000/api/storedata/${context.params.slug}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
