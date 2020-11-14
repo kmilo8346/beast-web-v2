@@ -21,7 +21,7 @@ const ProductSection = (props) => {
 const ProductItem = props => {
 
     return (
-        <div>
+        <div className={classes.produtContainer}> 
             {
                 /*<img className={classes.productImg}
                     src={props.imageUrl} 
@@ -29,7 +29,7 @@ const ProductItem = props => {
                 />*/
                 <Image className={classes.productImg}
                     src={props.imageUrl} 
-                    alt={`Imagen`}
+                    alt={`Imagen de ${props.nombre}`}
                     height={130}
                     width={130}
                 />

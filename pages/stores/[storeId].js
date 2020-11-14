@@ -10,28 +10,22 @@ import ScheduleStoreView from '../../components/scheduleStoreView/scheduleStoreV
 
 export async function getStaticPaths() {
     return {
-        paths: [
-        {
-            params: {
-                storeId: '123'
-            }
-        },
-        {
-            params: {
-                storeId: '1234'
-            }
-        },
-        {
-            params: {
-                storeId: '12345'
-            }
-        }
-    ],
+        // La propiedad paths se deja vacío para que el proceso del build no se demore tanto generando 
+        // las paginas estaticas para cada tienda, sino que estas sean creadas bajo demanda gracias a
+        // la opcion "fallback: true"
+        paths: [], 
         fallback: true  
     }   
 }
 
 export async function getStaticProps(context) {
+    
+    // Revisar si existe un token en cache
+    // Validar el token (si es valido y tiempo de expiracion)
+    // Si el token no es valido o no existe solicitar un nuevo token y almacenarlo en cache
+    // Usando el token para pedir los datos de la tienda
+
+    
     const resStoreData = await fetch(`http://localhost:3000/api/storedata/${context.params.storeId}`, {
         method: 'GET',
         headers: {
@@ -56,8 +50,6 @@ export async function getStaticProps(context) {
     });
     const storeProducts = await resStoreProducts.json();
   
-    // The value of the `props` key will be
-    //  passed to the `Home` component
     return {
         revalidate: 60, // Se re-construye la pagina cada 1 minuto
         props: {
@@ -67,37 +59,6 @@ export async function getStaticProps(context) {
     }
 }
 
-/*
-export async function getServerSideProps(context) {
-    // Get external data from the file system, API, DB, etc.
-    const resStoreData = await fetch(`http://localhost:3000/api/storedata/${context.params.storeId}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-    });
-    const storeData = await resStoreData.json();
-
-    const resStoreProducts = await fetch(`http://localhost:3000/api/storeproducts/${context.params.storeId}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-    });
-    const storeProducts = await resStoreProducts.json();
-  
-    // The value of the `props` key will be
-    //  passed to the `Home` component
-    return {
-      props: {
-          storeData: storeData,
-          storeProducts: storeProducts
-      }
-    }
-  }*/
-
 
 const StoreCmp = props => {
     const router = useRouter();
@@ -105,10 +66,9 @@ const StoreCmp = props => {
     const [showDownloadView, setShowDownloadView] = useState(false);
     const [showScheduleView, setShowScheduleView] = useState(false);
     
-    /*if(!router.isFallback && (!props.storeData || !props.storeData.name)){
-        return <div>Error 404</div>
-    }*/
-    
+    if(router.isFallback){
+        return <div>Cargando...</div>;
+    }
     
     return (
         <>
@@ -125,15 +85,18 @@ const StoreCmp = props => {
                     openDownloadView={setShowDownloadView.bind(null, true)}
                     storeName={router.isFallback ? '' : props.storeData.name}
                 />
-                <main>
-                    <StoreSection 
-                        storeData={router.isFallback ? undefined : props.storeData}
-                        openScheduleView={setShowScheduleView.bind(null, true)}
-                    />
+               <main>
+                    {
+                        !router.isFallback &&  
+                        <StoreSection 
+                            storeData={router.isFallback ? undefined : props.storeData}
+                            openScheduleView={setShowScheduleView.bind(null, true)}
+                        />
+                    }
                     <ProductSection storeProducts={router.isFallback ? undefined : props.storeProducts}/>
 
                 </main>
-                <DownloadAppModal 
+                 <DownloadAppModal 
                     isVisible={showDownloadView}
                     close={setShowDownloadView.bind(null, false)}
                 />

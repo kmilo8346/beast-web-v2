@@ -3,25 +3,20 @@ import classes from './storeSection.module.css';
 
 const StoreSection = (props) => {
 
-    
     return (
         <section className={classes.storeSection}>
             <div className={classes.storeContainer}>
                 
                 <div className={classes.storeImgWrapper}>
                     {
-                    /*<img
-                        className={classes.storeImg} 
-                        src={props.storeData?.imageUrl} 
-                        alt='Imagen de la tienda'
-                    />*/
                     <Image
-                        className={classes.storeImg} 
-                        src={props.storeData?.imageUrl} 
-                        alt='Imagen de la tienda'
-                        width={500}
+                        className={classes.storeImg}
+                        src={props.storeData.imageUrl} 
+                        alt={`Imagen de ${props.storeData?.name || 'la tienda'}`}
+                        
+                        width={800}
                         height={500}
-                    />
+                    /> 
                     }
                 </div>
                 
