@@ -1,0 +1,49 @@
+.modalWrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    background-color: transparent;
+    align-items: center;
+    position: relative;
+}
+
+.modalIconWrapper {
+    background-color: var(--nice-blue-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+}
+
+.modalBlockWrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalBlockWrapperBlack {
+    background-color: black;
+}
+
+.modalBlockWrapperWhite {
+    background-color: white;
+}
+
+.modalCloseBtn {
+    align-self: flex-end;
+    border: 0;
+    padding: 5px;
+    background-color: inherit;
+}
+
+.modalCloseBtnWhite {
+    color: white
+}
+
+.modalCloseBtnBlack {
+    color: black;
+}

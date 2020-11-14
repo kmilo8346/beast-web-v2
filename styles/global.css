@@ -1,0 +1,18 @@
+:root {
+    --title-text-color: inherit;
+    --vertical-margin: 30px;
+    --nice-blue-color: #457aff;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+.modal-icon {
+    width: 25px;
+    height: 25px;
+}
+

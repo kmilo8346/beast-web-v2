@@ -1,0 +1,14 @@
+.scheduleBodyRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.scheduleBodyRowLeft {
+    margin-right: 10px;
+}
+
+.scheduleBody {
+    color: #5f5f5f;
+    margin: 10px 20px;
+}

@@ -1,0 +1,16 @@
+.modalIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.downloadButonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+}
+
+.downloadBtn {
+    margin: 10px;
+}
