@@ -281,7 +281,33 @@ const StoreCmp = props => {
     if(router.isFallback){
         return <div>Cargando...</div>;
     }
-    
+
+    const structuredData = !router.isFallback && {
+        "@context": "http://www.schema.org",
+        "@type": "Store",
+        "name": props.storeData.name,
+        //"url": "http://url.de.la.tienda",
+        //"logo": "https://url.to.logo",
+        "image": props.storeData.imageUrl,
+        "description": props.storeData.descripcion,
+        "address": {
+           "@type": "PostalAddress",
+           "streetAddress": props.storeData.direccion,
+           "addressLocality": props.storeData.ciudad,
+           "addressRegion": props.storeData.region,
+           //"postalCode": "codigo postal",
+           "addressCountry": "Chile" // Cambiar esto para futuros clientes en otros paises
+        },
+        "geo": {
+           "@type": "GeoCoordinates",
+           "latitude": props.storeData.latitud,
+           "longitude": props.storeData.longitud
+        },
+        "hasMap": props.storeData.googleMapaUrl,
+        "openingHours": props.storeData.openingHours, //"Mo 09:00-17:30 Tu 09:00-17:30 We 09:00-15:30 Th 07:00-19:00 Fr 05:30-18:00 Sa 04:30-22:30",
+        "telephone": props.storeData.telefono
+      };
+
     return (
         <>
             <Head>
@@ -290,6 +316,10 @@ const StoreCmp = props => {
                 <meta
                     name="description"
                     content={router.isFallback ? '' : props.storeData.descripcion === '' ? props.storeData.name : props.storeData.descripcion}
+                />
+                <script 
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
                 />
             </Head>
            <div className="body">
