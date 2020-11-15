@@ -289,7 +289,7 @@ const StoreCmp = props => {
                 <meta name="og:title" content={router.isFallback ? '' : props.storeData.name} />
                 <meta
                     name="description"
-                    content={router.isFallback ? '' : props.storeData.descripcion}
+                    content={router.isFallback ? '' : props.storeData.descripcion === '' ? props.storeData.name : props.storeData.descripcion}
                 />
             </Head>
            <div className="body">
