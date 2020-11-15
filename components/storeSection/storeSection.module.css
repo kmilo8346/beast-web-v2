@@ -48,7 +48,7 @@
     max-width: 100%;
     text-align: justify;
     font-size: 15px;
-    color: #a2a2a2; 
+    color: var(--text-gray-color); 
     display: flex;
     flex-direction: row;
     align-items: center;

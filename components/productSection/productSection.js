@@ -5,7 +5,7 @@ const ProductSection = (props) => {
     return (
         <section className={classes.productSection}>
             <div className={classes.productTitleWrapper}>
-                <h3 className={classes.productTitleWrapperHeader}>PRODUCTOS DE ESTA TIENDA</h3>
+                <h2 className={classes.productTitleWrapperHeader}>PRODUCTOS DE ESTA TIENDA</h2>
             </div>
             <div className={classes.productsGrid}>
                 {

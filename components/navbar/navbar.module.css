@@ -20,6 +20,7 @@
 .navTitle {
     margin-left: 20px;
     color: var(--nice-blue-color);
+    font-size: 28px;
 }
 
 .navDownloadBtn{
@@ -37,7 +38,6 @@
 .navDownloadBtnImg {
     background-color: inherit;
     display: inline;
-    height: 4vh;
 }
 
 .navDownloadBtnText {

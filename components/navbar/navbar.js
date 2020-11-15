@@ -1,17 +1,20 @@
 import classes from './navbar.module.css';
+import Image from 'next/image';
 
 const Navbar = props => {
-
     return (
         <nav className={classes.navbar}>
-            {/*<img className='nav-logo' src='/assets/images/shop-shop-logo2.png' alt='Logo'/>*/}
             <h1 className={classes.navTitle}>{props.storeName}</h1>
-            
-            <button className={classes.navDownloadBtn} onClick={props.openDownloadView}>
-                <img className={classes.navDownloadBtnImg} src="/assets/icons/icon-download-blue48x48.png" alt='download'/>
-                <div className={classes.navDownloadBtnText}>
-                    DESCARGA NUESTRA APP
-                </div>
+            <button className={[classes.navDownloadBtn, classes.navDownloadBtnImg].join(' ')} onClick={props.openDownloadView}>
+                <Image 
+                    src="/assets/icons/icon-download-blue48x48.png" 
+                    alt='Download'
+                    width={25}
+                    height={25}
+                />
+            </button>
+            <button className={[classes.navDownloadBtn, classes.navDownloadBtnText].join(' ')} onClick={props.openDownloadView}>
+                DESCARGA NUESTRA APP
             </button>
         </nav>
     );

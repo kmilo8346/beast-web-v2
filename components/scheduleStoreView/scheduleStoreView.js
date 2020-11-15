@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from '../utils/modal/modal';
 import classes from './scheduleStoreView.module.css';
+import Image from 'next/image';
 
 const ScheduleDataRow = ({day, time}) => {
     return (
@@ -17,13 +18,20 @@ const DownloadAppView = props => {
         <Modal
             show={props.isVisible} 
             close={props.close}
-            icon={<img className='modal-icon' src="/assets/icons/icon-calendar-32.png" alt="Download icon" />}
+            icon={
+                <Image 
+                    src="/assets/icons/icon-calendar-32.png" 
+                    alt="Download icon" 
+                    width={25}
+                    height={25}    
+                />
+            }
         >
             <div className={classes.scheduleBody}>
                 {
                     props.data && props.data.map((el, idx) => {
-                    return <ScheduleDataRow key={idx} day={el.dia} time={el.horario} />
-                })
+                        return <ScheduleDataRow key={idx} day={el.dia} time={el.horario} />
+                    })
                 }
             </div>
         </Modal>
