@@ -23,18 +23,15 @@ const ProductItem = props => {
     return (
         <div className={classes.produtContainer}> 
             {
-                /*<img className={classes.productImg}
-                    src={props.imageUrl} 
-                    alt={`Imagen`}
-                />*/
-                <Image className={classes.productImg}
+                <Image 
+                    className={classes.productImg}
                     src={props.imageUrl} 
                     alt={`Imagen de ${props.nombre}`}
                     height={130}
                     width={130}
                 />
             }
-            <p className={[classes.productName, classes.productsTextData].join(' ')}><i>{props.nombre}</i></p>
+            <h3 className={[classes.productName, classes.productsTextData].join(' ')}><i>{props.nombre}</i></h3>
             <p className={[classes.productPrice, classes.productsTextData].join(' ')}>{`$${props.precio}`}</p>
         </div>
     )

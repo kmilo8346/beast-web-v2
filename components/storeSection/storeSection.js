@@ -24,10 +24,9 @@ const StoreSection = (props) => {
                 <div className={classes.storeInfoContainer}>
                     <div className={classes.storeTimesContainer}>
                         <div className={[classes.storeSecondaryText, classes.storeTimeText].join(' ')}>
-                            <span>
+                            <span className={classes.storeTimeMiniIcons}>
                                 {
-                                   /* <img className={classes.storeTimeMiniIcons} src='/assets/icons/icons8-clock-50.png' alt='Time icon' /> */
-                                    <Image className={classes.storeTimeMiniIcons} 
+                                    <Image  
                                         src='/assets/icons/icons8-clock-50.png' 
                                         alt='Time icon'
                                         width={15}
@@ -39,10 +38,9 @@ const StoreSection = (props) => {
                         </div>
                         
                         <div className={[classes.storeSecondaryText, classes.storeHoursText].join(' ')}>
-                            <span>
+                            <span className={classes.storeTimeMiniIcons} >
                                 {
-                                    /* <img className={classes.storeTimeMiniIcons} src='/assets/icons/icons8-schedule-24.png' alt='Time icon' /> */ 
-                                    <Image className={classes.storeTimeMiniIcons} 
+                                    <Image 
                                         src='/assets/icons/icons8-schedule-24.png' 
                                         alt='Time icon' 
                                         width={15}

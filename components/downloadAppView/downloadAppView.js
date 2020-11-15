@@ -30,7 +30,6 @@ const DownloadAppView = props => {
                     <Image 
                         src='/assets/images/app_store_es200x77.png' 
                         alt="Descarga con App Store" 
-                        style={{margin: '10px'}}
                         width={200}
                         height={77}
                     />
