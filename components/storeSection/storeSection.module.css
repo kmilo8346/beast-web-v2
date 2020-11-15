@@ -30,8 +30,9 @@
 }
 
 .storeInfoContainer{
-    max-width: fit-content;
+   /* max-width: fit-content;*/
     padding: 0 20px;
+    /**width: 100%;*/
 }
 
 .storeTimesContainer {

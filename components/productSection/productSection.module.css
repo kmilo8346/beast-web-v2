@@ -52,6 +52,7 @@
 
 .productName {
     color: var(--text-gray-color);
+    font-weight: 400;
 }
 
 .productPrice {

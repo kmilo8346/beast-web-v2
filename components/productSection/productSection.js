@@ -32,7 +32,7 @@ const ProductItem = props => {
                 />
             }
             <h3 className={[classes.productName, classes.productsTextData].join(' ')}><i>{props.nombre}</i></h3>
-            <p className={[classes.productPrice, classes.productsTextData].join(' ')}>{`$${props.precio}`}</p>
+            <p className={[classes.productPrice, classes.productsTextData].join(' ')}>{`${props.precio}`}</p>
         </div>
     )
 }
