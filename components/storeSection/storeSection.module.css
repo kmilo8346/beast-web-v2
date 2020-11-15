@@ -1,10 +1,8 @@
 .storeSection {
-    /*height: 93vh;*/
     background-color: white;
     text-align: center;
     display: flex;
     flex-flow: column;
-    /*padding: 0 15px 0 15px;*/
     justify-content: center;
     align-items: center;
     margin-bottom: var(--vertical-margin);

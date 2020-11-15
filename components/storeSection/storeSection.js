@@ -51,9 +51,6 @@ const StoreSection = (props) => {
                             <i>{props.storeData ? props.storeData.horario : 'Horario'   }</i>
                             <span onClick={props.openScheduleView}>
                                 {
-                                    /*<img 
-                                        className={classes.storeOpenScheduleViewIcon} 
-                                        src='/assets/icons/icon-expand.png' alt='More icon' /> */
                                     <Image 
                                         className={classes.storeOpenScheduleViewIcon} 
                                         src='/assets/icons/icon-expand.png' 
