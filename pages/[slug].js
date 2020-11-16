@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import React, {useState} from 'react';
 import {useRouter} from 'next/router';
-import Navbar from '../../components/navbar/navbar';
-import StoreSection from '../../components/storeSection/storeSection';
-import ProductSection from '../../components/productSection/productSection';
-import DownloadAppModal from '../../components/downloadAppView/downloadAppView'
-import ScheduleStoreView from '../../components/scheduleStoreView/scheduleStoreView';
+import Navbar from '../components/navbar/navbar';
+import StoreSection from '../components/storeSection/storeSection';
+import ProductSection from '../components/productSection/productSection';
+import DownloadAppModal from '../components/downloadAppView/downloadAppView'
+import ScheduleStoreView from '../components/scheduleStoreView/scheduleStoreView';
 
-import {purificarDatosTienda, purificarDatosProducto} from '../../utils/responsePurificator';
+import {purificarDatosTienda, purificarDatosProducto} from '../utils/responsePurificator';
 
 export async function getStaticPaths() {
     return {
