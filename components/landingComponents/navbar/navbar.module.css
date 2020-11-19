@@ -1,0 +1,123 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+}
+.logo {
+    width: 150px;
+    height: 66px;
+}
+.fontAwesome{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.menuPhoneIcon {
+    z-index: 20;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 200%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color:#457aff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+.menuPhoneIconHide {
+    opacity: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.menuNavHorizaontal {
+    width: 70%;
+    display: none;
+}
+.menuHorizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.menuItemHorizontal {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    opacity: 0.6;
+    cursor: pointer;
+    
+}
+.menuItemHorizontal:hover {
+    opacity: 1;
+}
+.menuItemHorizontalSelected {
+    border-bottom: 1px solid black;
+}
+
+.menuNavVerticalStyle {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    z-index: 100;
+    
+}
+.menuNavVerticalClosed {
+    transform: translateX(0);
+}
+
+.menuVertical {
+    list-style-type: none;
+}
+
+.menuItemVertical {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    margin: 30px;
+    color: white;
+    font-size: 18px;
+}
+
+.menuItemVerticalSelected {
+    border-bottom: 1px solid white;
+}
+
+
+@media (min-width: 600px) {
+    .menuPhoneIcon {
+        display: none;
+    }   
+    .menuNavHorizaontal {
+        display: inline;
+    }
+    .logo {
+        width: 208px;
+        height: 91px;
+    }
+}
+
+.iconMenu:before {
+    content: "\e9bd";
+  }
