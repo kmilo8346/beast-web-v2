@@ -12,15 +12,23 @@ interface SectionPropTypes {
 const ProductSection:FC<SectionPropTypes> = (props) => {
     return (
         <section className={classes.productSection}>
-            <div className={classes.productTitleWrapper}>
-                <h2 className={classes.productTitleWrapperHeader}>PRODUCTOS DE ESTA TIENDA</h2>
-            </div>
-            <div className={classes.productsGrid}>
-                {
-                    props.storeProducts &&
-                        props.storeProducts.map(p => <ProductItem product={p} key={p.id}/>)
-                }
-            </div>
+            
+            {props.storeProducts.length > 0 ?
+                <> 
+                    <div className={classes.productTitleWrapper}>
+                        <h2 className={classes.productTitleWrapperHeader}>PRODUCTOS DE ESTA TIENDA</h2>
+                    </div>
+                    <div className={classes.productsGrid}>
+                        {
+                            props.storeProducts &&
+                                props.storeProducts.map(p => <ProductItem product={p} key={p.id}/>)
+                        }
+                    </div>
+                </>
+                : 
+                <h2 className={classes.productTextNoPRoducts}>LA TIENDA NO TIENE PRODUCTOS DISPONIBLES EN ESTOS MOMENTOS</h2>
+            }
+            
         </section>
     );
 }

@@ -1,11 +1,9 @@
 import React, {FC, useState} from 'react';
 import Head from 'next/head'
 import {useRouter} from 'next/router';
-import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from 'next';
+import {GetStaticPaths, GetStaticProps} from 'next';
 
 import {Store, PurifiedStore, PurifiedProduct} from '../types';
-
-
 
 import Navbar from '../components/storeComponents/navbar/navbar';
 import StoreSection from '../components/storeComponents/storeSection/storeSection';
@@ -142,7 +140,6 @@ const StoreCmp:FC<PropTypes> = props => {
                         />
                     }
                     <ProductSection storeProducts={props.storeProducts}/>
-
                 </main>
                  <DownloadAppModal 
                     isVisible={showDownloadView}
