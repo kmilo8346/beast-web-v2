@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 import qs from 'qs';
 
 // libs
-import Firebase from '../firebase';
+import firebase from '../firebase';
 // types
 import {
     SearchParams,
@@ -53,7 +53,6 @@ export default class RESTClient<T, V> {
 
         this.axios.interceptors.request.use(
             async (config) => {
-                const firebase = Firebase.getInstance();
                 const newConfig = { ...config };
                 const currentuser = await firebase.getUser();
                 if (!currentuser) {
