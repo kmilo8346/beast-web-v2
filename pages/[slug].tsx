@@ -12,6 +12,7 @@ import StoreSection from '../components/storeComponents/storeSection/storeSectio
 import ProductSection from '../components/storeComponents/productSection/productSection';
 import DownloadAppModal from '../components/storeComponents/downloadAppView/downloadAppView'
 import ScheduleStoreView from '../components/storeComponents/scheduleStoreView/scheduleStoreView';
+import Spinner from '../components/utils/spinner/spinner';
 
 import {purificarDatosTienda, purificarDatosProducto} from '../utils/lib/formatters/response-formatter';
 
@@ -23,7 +24,7 @@ export const getStaticPaths:GetStaticPaths = async () => {
     const slugs = await StoreClientObj.getAllSlugs();
     
     return {
-        paths:slugs.map(slug => {
+        paths: slugs.map(slug => {
             return {
                 params: {slug: slug.slug}
             }
@@ -84,10 +85,8 @@ const StoreCmp:FC<PropTypes> = props => {
     const [showScheduleView, setShowScheduleView] = useState(false);
     
     if(router.isFallback){
-        return <div>Cargando...</div>;
+        return <Spinner />;
     }
-
-    //return <></>;
 
     const structuredData = !router.isFallback && {
         "@context": "http://www.schema.org",
