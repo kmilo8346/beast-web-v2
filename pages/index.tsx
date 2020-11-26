@@ -3,7 +3,9 @@ import Head from 'next/head';
 
 import MainCointainer from '../components/landingComponents/mainContainer/container'
 import LPNavbar from '../components/landingComponents/navbar/navbar';
+import LPInfo from '../components/landingComponents/infoSection/info';
 import LPDownload from '../components/landingComponents/downloadSection/download';
+import LPFooter from '../components/landingComponents/footer/footer';
 
 const LandingPage: FC = props => {
 
@@ -27,14 +29,11 @@ const LandingPage: FC = props => {
        <MainCointainer>
             <LPNavbar />
             <main>
+                <LPInfo />
                 <LPDownload />
-                <section>Tiendas</section>
             </main>
+            <LPFooter />
             
-            <footer>
-                <p>	&#169; 2020 by Firedevs</p>
-                <p><a href="gmail:firedevs@gmail.com">firedevs@gmail.com</a></p>
-            </footer>
         </MainCointainer>
     </>
     );

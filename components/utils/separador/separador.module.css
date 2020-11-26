@@ -1,0 +1,4 @@
+.separador {
+    width: '100%'; 
+    border-bottom: 1px solid var(--back-ground-color-drak);
+}

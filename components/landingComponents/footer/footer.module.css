@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    height: 10vh;
+}
+
+.text {
+    margin: 0;
+}
+
+.email {
+    margin: 0;
+    
+
+}
+.link {
+    text-decoration: none;
+    color: var(--nice-blue-color);
+}

@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 import qs from 'qs';
 
 // libs
-import firebase from '../firebase';
+import * as firebase from '../firebase';
 // types
 import {
     SearchParams,
@@ -54,6 +54,7 @@ export default class RESTClient<T, V> {
         this.axios.interceptors.request.use(
             async (config) => {
                 const newConfig = { ...config };
+                //const currentuser = await firebase.getUser();
                 const currentuser = await firebase.getUser();
                 if (!currentuser) {
                     throw new Error('Error making request with no user logged');

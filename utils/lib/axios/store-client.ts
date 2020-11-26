@@ -23,10 +23,12 @@ class StoreClient extends RestClient<Store, void> {
             slug: slug
         }});
         if(resp.hits.length === 0){
+            //TODO Manejar exepcion
             console.log(`WARNING: No hay tiendas con el slug ${slug}`);
             return;
         }
         if(resp.hits.length > 1){
+            //TODO Manejar exepcion
             console.log('WARNING: Existe mas de una tienda con ese slug');
         }
         return resp.hits[0];   

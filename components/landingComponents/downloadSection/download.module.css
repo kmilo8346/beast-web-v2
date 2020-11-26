@@ -1,10 +1,12 @@
 .container {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     min-height: 150px;
+    height: 90vh;
+    background-image: linear-gradient(to bottom, var(--back-ground-color-drak), var(--back-ground-color));
     
 }
 
@@ -15,15 +17,33 @@
     justify-content: space-around;
     height: 100%;
     flex: 1;
+    /*min-height: 20vh;*/
+    /*margin-bottom: 20px;*/
 }
 
-
+.text1 {
+    font-size: 16px;
+    margin: 20px;
+    text-align: justify;
+    color: rgb(85, 85, 85);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
 
 @media (min-width: 600px) {
     .downloadWrapper{
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        width: 50%;
+        width: 70%;
+    }
+    .text1 {
+        font-size: 18px;
+    }
+}
+
+@media (min-height: 800px){
+    .container {
+        height: 50vh;
     }
 }

@@ -1,3 +1,4 @@
 .body {
     max-width: 980px;
+    background-color: var(--back-ground-color);
 }

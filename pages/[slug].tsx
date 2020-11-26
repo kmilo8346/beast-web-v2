@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 import Head from 'next/head'
 import {useRouter} from 'next/router';
 import {GetStaticPaths, GetStaticProps} from 'next';
@@ -31,7 +31,6 @@ export const getStaticPaths:GetStaticPaths = async () => {
     }
 }
 
-
 export const getStaticProps:GetStaticProps<any, any> = async (context) => {
     
     const storeData = await StoreClientObj.searchStoreBySlug(context.params.slug);
@@ -43,7 +42,6 @@ export const getStaticProps:GetStaticProps<any, any> = async (context) => {
     }
 
     const purifiedStoreData =  purificarDatosTienda(storeData);
-
 
     let purifiedStoreProducts:PurifiedProduct[] = [];
     const productClientObj = new ProductClass(`/stores/${storeData.id}/products`);
@@ -100,7 +98,7 @@ const StoreCmp:FC<PropTypes> = props => {
            "addressLocality": props.storeData.ciudad,
            "addressRegion": props.storeData.region,
            //"postalCode": "codigo postal",
-           "addressCountry": "Chile" // Cambiar esto para futuros clientes en otros paises
+           "addressCountry": "Chile" // TODO: Cambiar esto para futuros clientes en otros paises
         },
         "geo": {
            "@type": "GeoCoordinates",

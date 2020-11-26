@@ -7,11 +7,11 @@ export const purificarDatosTienda = (inpureData:Store):PurifiedStore => {
 
     const address = inpureData.delivery_area.center;
     const storeData = {
-        imageUrl: inpureData.images[0],
+        imageUrl: inpureData.images[0], // TODO siempre debe haber una imagen lazar exeption si no viene
         name: inpureData.name,
         descripcion: inpureData.description || '',
         tiempoentrega: DurationFormatter.humanizeDurationRange(inpureData.delivery_time.gte, inpureData.delivery_time.lte),
-        horario: 'Hoy de 09:00 am a 8:30 pm',
+        horario: 'Hoy de 09:00 am a 8:30 pm', // TODO esto hay que construirlo la vista
         horarios: inpureData.opening_hours.map(scheduleDay => {
             return convertSchedule(scheduleDay);
         }),
@@ -35,13 +35,11 @@ export const purificarDatosTienda = (inpureData:Store):PurifiedStore => {
 
 
 export const purificarDatosProducto = (inpureProduct:Product):PurifiedProduct => {
-
     const product = {
         id: inpureProduct.id,
         imageUrl: inpureProduct.images[0],
         nombre: inpureProduct.name,
         precio: toCurrency(inpureProduct.price)
     };
-
     return product;
 }

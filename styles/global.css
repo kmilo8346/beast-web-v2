@@ -3,11 +3,20 @@
     --vertical-margin: 30px;
     --nice-blue-color: #457aff;
     --text-gray-color: #888;
+    --back-ground-color: #FEFDFD;
+    --back-ground-color-drak: #F0F0F0;
+}
+
+@font-face {
+    font-family: "AvenirLigth";
+    src: url("/assets/fonts/avenirltstd-light.otf");
+    font-style: normal;
 }
 
 body {
     margin: 0;
-    font-family: Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-family: Lato, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-family: "AvenirLigth";
     max-width: 800px;
     margin: auto;
 }
