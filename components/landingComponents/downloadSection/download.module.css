@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-evenly;
     min-height: 150px;
-    height: 90vh;
+    min-height: 90vh;
     background-image: linear-gradient(to bottom, var(--back-ground-color-drak), var(--back-ground-color));
     
 }
