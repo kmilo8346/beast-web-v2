@@ -86,24 +86,24 @@ export interface Store extends Slug {
 
 export type Weekday = "Lunes" | "Martes" | "Miercoles" | "Jueves" | "Viernes" | "Sábado" | "Domingo";
 export interface Schedule {
-    dia: Weekday;
-    horario: string;
+    day: Weekday;
+    schedule: string;
 }
 
 export interface PurifiedStore {
     imageUrl: string;
     name: string;
-    descripcion?: string;
-    tiempoentrega: string;
-    horario: string;
-    horarios: Schedule[];
-    direccion: string;
-    ciudad: string;
+    description?: string;
+    deliveryTime: string;
+    schedule: string,
+    schedules: Schedule[];
+    address: string;
+    city: string;
     region: string;
-    latitud: number;
-    longitud: number;
+    latitude: number,
+    longitude: number;
     googleMapaUrl: string;
-    telefono: string;
+    phone: string;
     openingHours: string
 }
 
@@ -128,14 +128,6 @@ export interface SearchResponse<T> {
     total: number;
     hits: T[];
 }
-
-type RecursivePartial<T> = {
-    [P in keyof T]?: T[P] extends (infer U)[]
-    ? RecursivePartial<U>[]
-    : T[P] extends object
-    ? RecursivePartial<T[P]>
-    : T[P];
-};
 
 export interface GetParams {
     pathVars: {
@@ -177,6 +169,6 @@ export interface Product {
 export interface PurifiedProduct {
     id: string;
     imageUrl: string;
-    nombre: string;
-    precio: string;
+    name: string;
+    price: string;
 }

@@ -4,8 +4,6 @@ import classes from './404.module.css';
 
 const NotFoundPage:React.FC = () => {
 
-
-
     return <div className={classes.idnotfound}>
             <div className={classes.notfound}>
                 <div className={classes.notfound404}>

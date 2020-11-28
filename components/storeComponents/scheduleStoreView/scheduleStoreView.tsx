@@ -2,24 +2,19 @@ import {FC} from 'react';
 import Modal from '../../utils/modal/modal';
 import classes from './scheduleStoreView.module.css';
 import Image from 'next/image';
+import {Schedule} from '../../../types';
 
-
-interface ScheduleType {
-    dia: string,
-    horario: string
-} 
-
-const ScheduleDataRow:FC<ScheduleType> = ({dia, horario}) => {
+const ScheduleDataRow:FC<Schedule> = ({day, schedule}) => {
     return (
         <div className={classes.scheduleBodyRow}>
-            <div className={classes.scheduleBodyRowLeft}><i>{dia}</i></div>
-            <div><i>{horario}</i></div>
+            <div className={classes.scheduleBodyRowLeft}><i>{day}</i></div>
+            <div><i>{schedule}</i></div>
         </div>
     )
 }
 
 interface ScheduleViewPropsType {
-    data: ScheduleType[],
+    data: Schedule[],
     isVisible: boolean,
     close: () => void
 }
@@ -42,7 +37,7 @@ const ScheduleView:FC<ScheduleViewPropsType> = props => {
             <div className={classes.scheduleBody}>
                 {
                     props.data && props.data.map((el, idx) => {
-                        return <ScheduleDataRow key={idx} dia={el.dia} horario={el.horario} />
+                        return <ScheduleDataRow key={idx} day={el.day} schedule={el.schedule} />
                     })
                 }
             </div>

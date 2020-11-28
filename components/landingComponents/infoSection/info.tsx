@@ -1,6 +1,5 @@
 import {FC} from 'react';
 import Image from 'next/image';
-import Separador from '../../utils/separador/separador';
 import useMediaQuery from '../../utils/hooks/useMediaQuery';
 import classes from './info.module.css';
 
@@ -30,7 +29,6 @@ const Info:FC = props => {
                     height={taller ? 445.5 : tall ? 356.4 : isBreakPoit ? 297 : 148.5}
                     alt="Imagen de aplicación"
                 />
-               {/*} <Separador />*/}
             </div>
         </div>
     );

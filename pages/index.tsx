@@ -21,7 +21,9 @@ const LandingPage: FC = props => {
                 name="description"
                 content='Shop Shop es una herramienta para comprar y vender productos cerca de ti. Descubre lo que venden tus vecinos y más, siempre con despacho gratis.'
             />
-            {/*<script 
+            {
+            // TODO: Agregar los datos del schema.org para SEO
+            /*<script 
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />*/}

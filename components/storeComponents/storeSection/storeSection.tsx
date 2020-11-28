@@ -6,12 +6,10 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {PurifiedStore} from '../../../types';
 
-
 interface StoreSectionPropTypes {
     storeData: PurifiedStore,
     openScheduleView: () => void
 }
-
 
 const StoreSection:FC<StoreSectionPropTypes> = (props) => {
 
@@ -41,7 +39,7 @@ const StoreSection:FC<StoreSectionPropTypes> = (props) => {
                                     <FontAwesomeIcon icon={faClock} width={15} height={15}/>
                                 }
                             </span>
-                            <i>{props.storeData ? props.storeData.tiempoentrega : 'Tiempo de entrega'}</i>
+                            <i>{props.storeData ? props.storeData.deliveryTime : 'Tiempo de entrega'}</i>
                         </div>
                         
                         <div className={[classes.storeSecondaryText, classes.storeHoursText].join(' ')}>
@@ -51,7 +49,7 @@ const StoreSection:FC<StoreSectionPropTypes> = (props) => {
                                     
                                 }
                             </span>
-                            <i>{props.storeData ? props.storeData.horario : 'Horario'   }</i>
+                            <i>{props.storeData ? props.storeData.schedule : 'Horario'   }</i>
                             <span onClick={props.openScheduleView}>
                                 {
                                     <FontAwesomeIcon icon={faChevronDown} width={15} height={15} className={classes.storeOpenScheduleViewIcon} />
@@ -60,7 +58,7 @@ const StoreSection:FC<StoreSectionPropTypes> = (props) => {
                         </div>
                     </div>
                     
-                    <p className={classes.storeDescriptionText}><i>{props.storeData && props.storeData.descripcion}</i></p>
+                    <p className={classes.storeDescriptionText}><i>{props.storeData && props.storeData.description}</i></p>
                 </div>
             </div>
         </section>

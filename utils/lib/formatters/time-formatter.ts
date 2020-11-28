@@ -12,16 +12,16 @@ const fillWithCero = (time:string) => {
     return arrtime;
 }
 const convertMilitaryTimeToOrdinalTime = (militaryTime:number):string[] => {
-    let comodin = 'am';
+    let period = 'am';
     let civilTime = militaryTime;
     if(Number(militaryTime) > 1200){
-        comodin = 'pm';
+        period = 'pm';
         civilTime = militaryTime - 1200;
     }
     const time = civilTime.toString();
     const arrFullTime = fillWithCero(time);
     
-    return [arrFullTime[0], arrFullTime[1], ':', arrFullTime[2], arrFullTime[3], comodin];
+    return [arrFullTime[0], arrFullTime[1], ':', arrFullTime[2], arrFullTime[3], period];
 }
 
 const getDayByNumber = (dayOfTheWeek:string): DayData => {
@@ -112,16 +112,16 @@ const getDayByNumber = (dayOfTheWeek:string): DayData => {
 export const convertSchedule = (schedule:OpentinHour): Schedule => {
 
     const time = [ ...convertMilitaryTimeToOrdinalTime(schedule.open), ' - ',  ...convertMilitaryTimeToOrdinalTime(schedule.close)];
-    const dia = getDayByNumber(schedule.day); 
+    const day = getDayByNumber(schedule.day); 
     return {
-        dia: dia.es.long,
-        horario: time.join('')
+        day: day.es.long,
+        schedule: time.join('')
     }
 }
 
 export const convertScheduleToSchemaFormat = (schedule:OpentinHour) => {
-    const dia = getDayByNumber(schedule.day); 
-    const shortDay = dia.en.short;
+    const day = getDayByNumber(schedule.day); 
+    const shortDay = day.en.short;
     const openArrTime = fillWithCero(schedule.open.toString());   
     const openTime = [openArrTime[0], openArrTime[1], ':', openArrTime[2], openArrTime[3]].join('');
     const closeArrTime = fillWithCero(schedule.close.toString());

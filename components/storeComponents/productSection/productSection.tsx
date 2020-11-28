@@ -45,13 +45,13 @@ const ProductItem:FC<ProductItemPropType> = props => {
                 <Image 
                     className={classes.productImg}
                     src={props.product.imageUrl} 
-                    alt={`Imagen de ${props.product.nombre}`}
+                    alt={`Imagen de ${props.product.name}`}
                     height={130}
                     width={130}
                 />
             }
-            <h3 className={[classes.productName, classes.productsTextData].join(' ')}><i>{props.product.nombre}</i></h3>
-            <p className={[classes.productPrice, classes.productsTextData].join(' ')}>{`${props.product.precio}`}</p>
+            <h3 className={[classes.productName, classes.productsTextData].join(' ')}><i>{props.product.name}</i></h3>
+            <p className={[classes.productPrice, classes.productsTextData].join(' ')}>{`${props.product.price}`}</p>
         </div>
     )
 }
